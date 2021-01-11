@@ -8,6 +8,8 @@ target 'GHClone' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'GHCloneTests' do
     inherit! :complete
     # Pods for testing
