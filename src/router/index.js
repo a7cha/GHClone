@@ -9,7 +9,7 @@ function Router(){
 	return(
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="RepositoryView">
-				<Stack.Screen name="RepositoryView" component={RepositoryView}/>
+				<Stack.Screen name="RepositoryView" component={RepositoryView} options={{ headerShown : false}}/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	)

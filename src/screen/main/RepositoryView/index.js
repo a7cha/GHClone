@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import {
 	ScrollView,
 	View,
@@ -6,8 +6,34 @@ import {
 	TextInput
 } from 'react-native';
 import styles from './RepositoryView.style.js';
+import { Button } from 'react-native-paper';
+import {useSelector, useDispatch} from 'react-redux'
+import { GetRepo } from '../../../redux/actions/index.js'
+
 
 function RepositoryView(){
+	// const [listRepo, setListRepo] = useState([]);
+
+	const dispatch = useDispatch()
+	const { data } = useSelector((s) => s.GithubAPI)
+
+	// setListRepo(data)
+
+	useEffect(() => {
+			// const headers = { headers : {'Authorization' : "token bf0b31333740f8d6856771d848487a400fb439dd"}};
+			// Axios.get("https://api.github.com/user/repos", headers)
+			// .then(res => {
+			// 	console.log(res);
+			// }).catch(err => {
+			// 	console.log(err);
+			// })
+
+			dispatch(GetRepo());
+			
+			console.log(data);		
+	}, [])
+
+
 	return(
 		<>
 			<ScrollView style={{backgroundColor: "white"}}>
@@ -21,11 +47,27 @@ function RepositoryView(){
 							</TextInput>
 						</View>
 
-						<View style={{flexDirection : 'row',justifyContent : 'space-between'}}>
+						<View style={{flexDirection : 'row',justifyContent : 'space-between', marginVertical : 10}}>
 							
 								<View style={{flexDirection : 'row'}}>
-									<Text>1</Text>
-									<Text>2</Text>
+									<Button
+										mode="outlined"
+										uppercase="true"
+										>
+										<Text>
+											Type : All
+										</Text>
+									</Button>
+
+									<Button
+										mode="outlined"
+										uppercase="true"
+										style={{marginLeft : 10}}
+										>
+										<Text>
+											Type : All
+										</Text>
+									</Button>
 								</View>
 
 								<View>
@@ -34,9 +76,22 @@ function RepositoryView(){
 								</View>								
 							
 						</View>
+
+						<View style={{borderBottomWidth : 0.5, borderColor : "#24292e", marginBottom : 10}}/>						
 					
 						<View style={styles.panelList}>
-							<Text>ini repository view</Text>
+							<View style={{flexDirection : "row", justifyContent : "space-between", marginVertical : 15}}>
+								<View style={{flexDirection : "column"}}>
+									<View style={{flexDirection : "row"}}>
+										<Text style={styles.repoTitle}>GHClone</Text>
+										<Text>  private</Text>	
+									</View>
+									
+								<Text>ini repository view</Text>
+								</View>
+								<Text>ini repository view</Text>	
+							</View>
+							
 						</View>					
 				</View>
 
