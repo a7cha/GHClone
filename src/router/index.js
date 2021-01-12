@@ -1,4 +1,4 @@
-import React,{memo} from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {RepositoryView} from '../screen/index'

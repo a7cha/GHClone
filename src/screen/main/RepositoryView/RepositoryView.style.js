@@ -7,7 +7,7 @@ export default StyleSheet.create({
 		borderBottomWidth : 0.5,
 		borderColor : "#24292e",
 		width : wp(90),
-		height : hp(10)		
+		paddingBottom: 15,
 	},
 	container : {
 		alignSelf : 'center', 
@@ -19,8 +19,12 @@ export default StyleSheet.create({
 		borderColor : "gray"
 	},
 	repoTitle : {
+		width : wp(60),
 		color : "#0366D6",
 		fontSize : fp(3),
 		fontWeight : "700",
+	},
+	profilespostition : {
+		 
 	}
 })

@@ -11,19 +11,21 @@ const GithubAPI = (state = initialState, action = {}) => {
 			return {
 				...state,
 				loading : true,
-			};
-		case 'GET_REPO_SUCCESS':
-			return {
-				...state,
-				loading : false,
-				data : action.payload
+				error : "request"
 			};
 		case 'GET_REPO_FAILED':
 			return {
 				...state,
 				loading : false,
 				error : action.payload,
-			}
+			}			
+		case 'GET_REPO_SUCCESS':
+			return {
+				...state,
+				loading : false,
+				data : action.payload
+			};
+
 		default : {
 			return {
 				...state

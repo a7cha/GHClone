@@ -1,10 +1,10 @@
 import React from 'react';
 import Router from './src/router/index.js'
 import 'react-native-gesture-handler';
-import {PersistGate} from 'redux-persist/integration/react';
+import {DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { PersistGate } from 'redux-persist/es/integration/react'
 import {Provider} from 'react-redux';
 import configureStore from './src/redux/store';
-import {DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 
 const theme = {

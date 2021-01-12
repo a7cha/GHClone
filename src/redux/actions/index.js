@@ -31,7 +31,7 @@ export const GetRepo = () => {
 			"https://api.github.com/user/repos", headers
 		).then((res) => {
 			const data = res;
-			dispatch(GetRepoSuccess(data));
+			dispatch(GetRepoSuccess(res.data));
 		}).catch((err) => {
 			const errMessage = err;
 			dispatch(GetRepoFailed(errMessage));
