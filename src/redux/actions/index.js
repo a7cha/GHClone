@@ -40,6 +40,6 @@ export const GetRepo = () => {
 }
 
 
-//i didnt realize the api have a expired 
+//i didnt realize token have a expired 
 //change line 31 like below
 // "https://api.github.com/users/a7cha/repos"
