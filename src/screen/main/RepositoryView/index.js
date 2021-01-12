@@ -103,7 +103,7 @@ function RepositoryView() {
 
 						<View style={{flexDirection : "column", paddingLeft : "6%",}}>
 							<Text style={{fontSize : 30, fontWeight : "bold"}}>Arungi Cahaya</Text>
-							<Text style={{fontSize : 20, fontWeight : "thin", color : "gray"}}>a7cha</Text>	
+							<Text style={{fontSize : 20, fontWeight : "200", color : "gray"}}>a7cha</Text>	
 						</View>
 					</View>
 
@@ -173,10 +173,10 @@ function RepositoryView() {
 						}}
 					/>
 
-					{data.map((repo) => {
+					{data.map((repo, index) => {
 						return (
 							<>
-								<View style={styles.panelList}>
+								<View style={styles.panelList} key={index}>
 									<View
 										style={{
 											flexDirection: 'row',
@@ -195,7 +195,7 @@ function RepositoryView() {
 											</View>
 
 										<Text style={{marginTop : 20}}>
-											{moment(repo.pushed_at).format("dddd, D, MMMM Y")}
+											{moment(repo.updated_at).format("dddd, D, MMMM Y")}
 										</Text>											
 										</View>
 

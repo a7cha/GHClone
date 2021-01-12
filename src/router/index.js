@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {RepositoryView} from '../screen/index'
@@ -6,6 +7,10 @@ import {RepositoryView} from '../screen/index'
 const Stack = createStackNavigator();
 
 function Router(){
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);	
+  
 	return(
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="RepositoryView">
